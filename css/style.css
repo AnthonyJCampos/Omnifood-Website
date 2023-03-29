@@ -16,10 +16,10 @@ Defualt: 1
 
 -Primary: #e67e22
 
-- TINTS:
-- SHADES:
+- TINTS: #fdf2e9
+- SHADES: #cf711f
 - ACCENT:
-- GREYS: #555
+- GREYS: #555 #333
 
 --- 05 SHADOWS
 
@@ -52,8 +52,84 @@ html {
 /* end of reset*/
 
 body {
-  font-family: sans-serif;
+  font-family: "Inter", sans-serif;
   line-height: 1;
   font-weight: 400;
   color: #555;
+}
+
+.section-hero {
+  background-color: #fdf2e9;
+  padding: 9.6rem;
+}
+
+.hero {
+  max-width: 130rem;
+  /* center hero section*/
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9.6rem;
+  align-items: center;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  color: #333;
+
+  margin-bottom: 3.2rem;
+}
+
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.5;
+  margin-bottom: 4.8rem;
+}
+
+.hero-img {
+  width: 100%;
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+
+  font-size: 2rem;
+  text-decoration: none;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+  /* Put Tranistion on Original State*/
+  transition: background-color 0.3s;
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #e67e22;
+  color: #fff;
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #cf711f;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fdf2e9;
+  /* Trick to add border inside */
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+/* Helper Class */
+.margin-right-sm {
+  margin-right: 1.6rem !important;
 }
