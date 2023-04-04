@@ -26,12 +26,14 @@ Paragraph default: 1.6
 
 -Primary: #e67e22
 
-- TINTS: #fdf2e9, #fae5d3
+- TINTS: #fdf2e9, #fae5d3, #eb984e
 - SHADES: #cf711f
 - ACCENT:
 - GREYS: #6f6f6f #555 #333
 
 --- 05 SHADOWS
+0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
 
 --- 06 BORDER-RADIUS
 
