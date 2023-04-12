@@ -60,6 +60,31 @@ allLinks.forEach((link) => {
   });
 });
 
+// STICKY NAV
+
+const sectionHeroElement = document.querySelector(".section-hero");
+
+const obs = new IntersectionObserver(
+  function (entries) {
+    const entry = entries[0];
+
+    if (!entry.isIntersecting) {
+      document.querySelector("body").classList.add("sticky");
+    }
+
+    if (entry.isIntersecting) {
+      document.querySelector("body").classList.remove("sticky");
+    }
+  },
+  {
+    // In the viewport window
+    root: null,
+    threshold: 0,
+    rootMargin: "-80px",
+  }
+);
+obs.observe(sectionHeroElement);
+
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
   var flex = document.createElement("div");
