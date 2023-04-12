@@ -33,6 +33,33 @@ const mobileChange = function (mediaQuery) {
 mobileChange(mobileNavMediaQuery);
 mobileNavMediaQuery.addEventListener("change", mobileChange);
 
+// SMOOTH SCROLLING
+
+const allLinks = document.querySelectorAll("a:link");
+allLinks.forEach((link) => {
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
+    const href = link.getAttribute("href");
+
+    // Scroll Back to Top
+    if (href === "#") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Scroll to other links
+    if (href !== "#" && href.startsWith("#")) {
+      const sectionEl = document.querySelector(href);
+      sectionEl.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Close Mobile Nav
+
+    if (link.classList.contains("main-nav-link")) {
+      document.querySelector(".header")?.classList.toggle("nav-open");
+    }
+  });
+});
+
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
   var flex = document.createElement("div");
